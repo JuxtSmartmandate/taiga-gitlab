@@ -5,5 +5,5 @@ GITLAB_URL = ""
 
 try:
     from local_config import *
-except:
+except ImportError:
     pass
