@@ -32,7 +32,6 @@ def gitlab_view():
                         story_description = incoming_data["data"]["description"]
                         gl = gitlab.Gitlab(gitlab_url, gitlab_access_token)
                         try:
-                            # gl_project = gl.projects.get(gitlab_project_id)
                             gl_issue = gl.project_issues.create({'title': story_subject, 'description': story_description}, project_id=gitlab_project_id)
                         except Exception as e:
                             response_dict["error"] = "Could not add issue in gitlab"
